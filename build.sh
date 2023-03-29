@@ -1,2 +1,27 @@
 #!/usr/bin/sh
-docker build --no-cache=true -t yongfu/tao_ace .
+set -xe
+
+# Set this if you are on a network that does ssl inspection
+WGET_OPTS=--no-check-certificate
+
+# Legacy version.
+TAO_VERSION=6.2.0
+docker build \
+ --build-arg BUILD_IMAGE=ubuntu:precise-20150320 \
+ --build-arg LEGACY=1 \
+ --build-arg TAO_VERSION=$TAO_VERSION \
+ --build-arg WGET_OPTS=$WGET_OPTS \
+ -t jeteve/tao_ace:$TAO_VERSION .
+
+exit 0
+
+
+# Latest release
+TAO_VERSION=7.1.0
+docker build --build-arg \
+  BUILD_IMAGE=ubuntu:jammy \
+  TAO_VERSION=$TAO_VERSION \
+  WGET_OPTS=$WGET_OPTS \
+  -t jeteve/tao_ace:$TAO_VERSION\
+  -t jeteve/tao_ace:latest \
+   .

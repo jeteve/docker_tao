@@ -17,11 +17,25 @@ communication software. Since TAO is built on ACE, ACE should be built first. Se
 
 Compiling TAO+ACE is a really time-consuming process. So it is strongly suggested to pull the image from Docker's public repository directly (see Running)
 
-* Run ```build.sh```. The image name is jeteve/tao_ace. Replacing the name in ```build.sh``` if you like.
+* Run ```build.sh```. The image tags are jeteve/tao_ace:<tao version>.
+
+If you are behind a corporate network that does SSL inspection, you might want to change this
+build.sh script to inject a WGET_OPTION. Check the script.
+
 
 # Running
 
-* Run ```docker -i -t yongfu/tao_ace``` to explore.
+* Run ```docker -it jeteve/tao_ace``` to explore. All is installed in /usr/local/(bin|lib)
+
+## Entry point and command
+
+This image entry point and command are intentionally left blank. This is just the compiled TAO+ACE software.
+
+## Example: Run the tao_cosnaming server.
+
+  $ docker run jeteve/tao_ace:6.2.0 tao_cosnaming -d -ORBVerboseLogging 3 -ORBEndpoint iiop://:5353 -ORBDebug
+
+## 
 
 # Reference
 
