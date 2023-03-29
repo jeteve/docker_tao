@@ -2,7 +2,7 @@
 set -xe
 
 # Set this if you are on a network that does ssl inspection
-WGET_OPTS=--no-check-certificate
+# WGET_OPTS=--no-check-certificate
 
 # Legacy version.
 TAO_VERSION=6.2.0

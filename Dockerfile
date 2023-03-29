@@ -36,8 +36,8 @@ ENV INSTALL_PREFIX=/usr/local/tao/
 # build ACE first
 RUN cd $ACE_ROOT/ace;make -j 8
 #build gperf
-RUN cd $ACE_ROOT/apps/gperf/src;make -j 8
-RUN cd $TAO_ROOT;make -j 8
+RUN cd $ACE_ROOT/apps/gperf/src;make -j 4
+RUN cd $TAO_ROOT;make -j 4
 RUN cd $ACE_ROOT;make install
 RUN cd $TAO_ROOT;make install
 
@@ -47,7 +47,4 @@ FROM $RUNTIME_IMAGE
 ARG TAO_PREFIX=/usr/local/tao/
 COPY --from=builder $TAO_PREFIX /usr/local
 ENV LD_LIBRARY_PATH /usr/local/lib
-
-
-#RUN rm -f ACE+TAO-6.2.0.tar.gz
 
