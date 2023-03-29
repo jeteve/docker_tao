@@ -17,7 +17,7 @@ communication software. Since TAO is built on ACE, ACE should be built first. Se
 
 Compiling TAO+ACE is a really time-consuming process. So it is strongly suggested to pull the image from Docker's public repository directly (see Running)
 
-* Run ```build.sh```. The image name is yongfu/tao_ace. Replacing the name in ```build.sh``` if you like.
+* Run ```build.sh```. The image name is jeteve/tao_ace. Replacing the name in ```build.sh``` if you like.
 
 # Running
 
