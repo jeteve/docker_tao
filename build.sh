@@ -23,9 +23,17 @@ docker build \
   -t jeteve/tao_ace:$TAO_VERSION\
    .
 
+TAO_VERSION=7.1.2
+docker build \
+  --build-arg BUILD_IMAGE=ubuntu:jammy \
+  --build-arg TAO_VERSION=$TAO_VERSION \
+  --build-arg WGET_OPTS=$WGET_OPTS \
+  -t jeteve/tao_ace:$TAO_VERSION\
+   .
+
 
 # Latest release
-TAO_VERSION=7.1.2
+TAO_VERSION=8.0.2
 docker build \
   --build-arg BUILD_IMAGE=ubuntu:jammy \
   --build-arg TAO_VERSION=$TAO_VERSION \

@@ -1,5 +1,5 @@
 # This old TAO+ACE can be build on an antique distrib.
-ARG BUILD_IMAGE
+ARG BUILD_IMAGE="setmeplease"
 ARG RUNTIME_IMAGE=$BUILD_IMAGE
 
 FROM $BUILD_IMAGE AS builder
